@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Emir Yusuf Karadeniz | Portföy</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+
+    <style>
+      /* 🔹 Daha koyu lacivert arka plan */
+      body {
+        margin: 0;
+        color: #fff;
+        background: linear-gradient(180deg, #070b1d 0%, #0f1530 50%, #141a33 100%);
+        background-attachment: fixed;
+        font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      }
+
+      /* Görselle başlığın çakışmaması */
+      .home {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        padding-top: 80px;
+        text-align: center;
+      }
+
+      .home__title {
+        font-size: 3.5rem;
+        letter-spacing: 3px;
+        line-height: 1.2;
+        margin: 0 0 10px 0;
+        font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      }
+
+      .home__subtitle {
+        margin-top: 6px;
+        font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+      }
+
+      /* Ripple efekti */
+      .skill__button {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.08s ease;
+      }
+
+      .skill__button:active {
+        transform: scale(0.97);
+      }
+
+      .skill__button::after {
+        content: "";
+        position: absolute;
+        left: var(--x, 50%);
+        top: var(--y, 50%);
+        width: 0;
+        height: 0;
+        background: currentColor;
+        opacity: 0.25;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+      }
+
+      .skill__button.is-rippling::after {
+        animation: ripple 0.5s ease-out forwards;
+      }
+
+      @keyframes ripple {
+        from {
+          width: 0;
+          height: 0;
+          opacity: 0.25;
+        }
+        to {
+          width: 220px;
+          height: 220px;
+          opacity: 0;
+        }
+      }
+
+      /* Proje kutusu */
+      .project {
+        margin-top: 25px;
+        display: none;
+        text-align: center;
+        animation: fadeIn 0.6s ease-in-out;
+      }
+
+      .project img {
+        border-radius: 12px;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+        max-width: 90%;
+        height: auto;
+      }
+
+      .project a {
+        display: inline-block;
+        margin-top: 12px;
+        text-decoration: none;
+        color: #66aaff;
+        font-weight: bold;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(15px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ÜST MENÜ (style.css’teki görünüm korunur) -->
+    <header class="header">
+      <nav class="header__nav main-nav">
+        <ul class="main-nav__list main-list">
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#home">HOME</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#about">ABOUT</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#skills">MY SKILLS</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="#feedback">FEEDBACK</a>
+          </li>
+          <li class="main-list__item list-item">
+            <a class="list-item__link" href="/data">DATA</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="main">
+      <!-- ANA SAYFA -->
+      <section class="main__home home" id="home">
+        <h1 class="home__title">EMİR YUSUF KARADENİZ</h1>
+        <p class="home__subtitle">WEB-DEVELOPER · PYTHON PROGRAMMER</p>
+      </section>
+
+      <!-- HAKKIMDA -->
+      <section class="main__about about" id="about">
+        <h2 class="about__title">ABOUT ME</h2>
+        <div class="about__info info-block">
+          <p class="info-block__text">
+            Merhaba, ben <strong>Emir Yusuf Karadeniz</strong>. 10 yaşındayım ve Ankara’da yaşıyorum.
+            Kodlama, teknoloji ve bilimin gücüne inanıyorum. Her satır kodla yeni şeyler keşfetmeyi,
+            üretmeyi ve geleceği şekillendirmeyi seviyorum. Python ile fikirlerimi hayata geçiriyor,
+            kendi dijital dünyamı kuruyorum. 🌍💻
+            <br /><br />
+            🚀 <strong>Becerilerim:</strong> Python, Discord botları, HTML tasarımı ve SQL veritabanı.
+            Kodlama yaparken hem mantık hem yaratıcılığı birleştiriyorum; yazılım benim için bir ifade biçimi.
+          </p>
+          <img
+            class="info-block__img"
+            src="static/img/profile.png"
+            alt="Emir Yusuf Karadeniz"
+            width="250"
+            height="250"
+          />
+        </div>
+      </section>
+
+      <!-- BECERİLER -->
+      <section class="main__skills skills" id="skills">
+        <h2 class="skills__title">MY SKILLS</h2>
+        <ul class="skills__list skills-list">
+          <li class="skills-list__skill skill">
+            <img
+              class="skill__img"
+              src="static/img/python.png"
+              alt="python"
+              width="150"
+              height="150"
+            />
+            <span class="skill__info">Python Projeleri</span>
+            <input
+              class="skill__button"
+              type="button"
+              value="SHOW PROJECT"
+              id="pythonBtn"
+            />
+          </li>
+          <li class="skills-list__skill skill">
+            <img
+              class="skill__img"
+              src="static/img/discord.png"
+              alt="discord"
+              width="150"
+              height="150"
+            />
+            <span class="skill__info">Discord Bot</span>
+            <input class="skill__button" type="button" value="SHOW PROJECT" />
+          </li>
+          <li class="skills-list__skill skill">
+            <img
+              class="skill__img"
+              src="static/img/html.png"
+              alt="html"
+              width="150"
+              height="150"
+            />
+            <span class="skill__info">HTML Tasarımı</span>
+            <input class="skill__button" type="button" value="SHOW PROJECT" />
+          </li>
+          <li class="skills-list__skill skill">
+            <img
+              class="skill__img"
+              src="static/img/db.webp"
+              alt="SQL"
+              width="150"
+              height="150"
+            />
+            <span class="skill__info">SQL Veritabanı</span>
+            <input class="skill__button" type="button" value="SHOW PROJECT" />
+          </li>
+        </ul>
+
+        <!-- Python projesi görseli -->
+        <div class="project" id="pythonProject">
+          <img src="static/img/python-project.png" alt="Python Project" />
+          <a href="https://github.com/emirkod" target="_blank">GitHub'da Aç</a>
+        </div>
+      </section>
+
+      <!-- GERİ BİLDİRİM -->
+      <section class="main__feedback feedback" id="feedback">
+        <h2 class="feedback__title">FEEDBACK</h2>
+        <form action="/" method="POST" class="feedback__form form">
+          <label for="email">
+            <input
+              type="email"
+              class="form__input"
+              name="email"
+              id="email"
+              placeholder="E-mail"
+              required
+            />
+          </label>
+          <label for="text">
+            <textarea
+              name="text"
+              class="form__input"
+              id="text"
+              cols="70"
+              rows="10"
+              required
+              placeholder="Comment"
+            ></textarea>
+          </label>
+          <button class="form__button" type="submit">SEND</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2025 Emir Yusuf Karadeniz — Kodlama ve Bilim Tutkunu</p>
+    </footer>
+
+    <!-- Ripple + Python projesi gösterme -->
+    <script>
+      // Ripple animasyonu
+      document.querySelectorAll(".skill__button").forEach((el) => {
+        el.addEventListener("click", (e) => {
+          const rect = el.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          el.style.setProperty("--x", x + "px");
+          el.style.setProperty("--y", y + "px");
+          el.classList.remove("is-rippling");
+          void el.offsetWidth;
+          el.classList.add("is-rippling");
+        });
+      });
+
+      // Python projesi göster/gizle
+      const pythonBtn = document.getElementById("pythonBtn");
+      const pythonProject = document.getElementById("pythonProject");
+      pythonBtn.addEventListener("click", () => {
+        pythonProject.style.display =
+          pythonProject.style.display === "block" ? "none" : "block";
+        pythonProject.scrollIntoView({ behavior: "smooth", block: "center" });
+      });
+    </script>
+  </body>
+</html>

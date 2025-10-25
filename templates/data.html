@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <title>Form Verileri</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #0f1530;
+            color: #fff;
+            text-align: center;
+        }
+        table {
+            margin: 40px auto;
+            border-collapse: collapse;
+            width: 80%;
+            background: #1b2345;
+        }
+        th, td {
+            border: 1px solid #444;
+            padding: 10px;
+        }
+        th {
+            background: #222b5a;
+        }
+        a {
+            color: #6af;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>📬 Gönderilen Form Verileri</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>İsim</th>
+            <th>E-posta</th>
+            <th>Mesaj</th>
+        </tr>
+        {% for entry in data %}
+        <tr>
+            <td>{{ entry.id }}</td>
+            <td>{{ entry.name }}</td>
+            <td>{{ entry.email }}</td>
+            <td>{{ entry.message }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="/">← Ana Sayfaya Dön</a>
+</body>
+</html>
